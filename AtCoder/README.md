@@ -1,0 +1,4 @@
+## AtCoder
+This a catalog of some competitive programming practice I have done on Atcoder written mainly in C++ with some earlier solutions in Python. Feel free to browse around, comments/questions welcome and stars/forks appreciated.
+
+~ Amit Dey
