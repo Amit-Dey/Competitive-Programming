@@ -4,7 +4,7 @@ This a catalog of some competitive programming practice I have done. Included ar
 
 ~ Amit Dey
 
-<h2> Profiles <img src = "https://cdn3.iconfinder.com/data/icons/user-avatars-1/512/users-11-2-256.png" width = 32px> </h2>
+<h2> Links <img src = "https://icon-library.com/images/external-link-icon-png/external-link-icon-png-28.jpg" width = 32px> </h2>
 <a href= https://codeforces.com/profile/Amitdey > <img width ='100px' src ='https://cdn.codeforces.com/s/25433/images/codeforces-sponsored-by-ton.png'> </a>&nbsp
 <a href= https://atcoder.jp/users/Amitdey > <img width ='80px' src ='https://img.atcoder.jp/assets/atcoder.png'> </a>&nbsp
 <a href= https://www.codechef.com/users/amit_dey_iiuc > <img width ='90px' src ='https://cdn.codechef.com/sites/all/themes/abessive/cc-logo.svg'> </a>&nbsp
