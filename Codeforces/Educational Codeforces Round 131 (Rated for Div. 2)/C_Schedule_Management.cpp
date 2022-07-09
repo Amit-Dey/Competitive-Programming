@@ -71,7 +71,17 @@ int dirx[8]={-1,0,0,1,-1,-1,1,1}, diry[8]={0,1,-1,0,-1,1,-1,1};
 const int dx[4]{1,0,-1,0}, dy[4]{0,1,0,-1}; // for every grid problem!!
 const int MOD = 1e9+7; // 998244353;
 ll INFF = 1000000000000000005LL;
-ll t,n,m,ans,mx,mn,cnt,sum,a,b,c,d,x,y,u,v;
+ll t,n,m,ans,mx,mn,cnt,sum,a,b,c,d,u,v;
+ll arr[200005];    
+
+bool check(ll num){
+	long long x=0,y=0;
+	for(ll i=1;i<=n;++i){
+		if(num>=arr[i])x+=(num-arr[i])>>1;
+		else y+=arr[i]-num;
+	}
+	return x>=y;
+}
 
 
 // solution comes here
@@ -79,12 +89,19 @@ ll solution(){
     t=1;
     cin>>t;
     while (t--){
-        ll worker,tasks;cin>>worker>>tasks;
-        vector<ll>idx_worker(m);
-        map<ll,ll>mp;
-        each(i,idx_worker)cin>>i,mp[i]++;
-        
-
+        cin>>n>>m;
+        FOR(i,0,n+1)arr[i]=0;
+        FOR(i,0,m){
+            cin>>u;
+            arr[u]++;
+        }
+        int l=0,r=500000;
+		while(l<r-1){
+			int mid=(l+r)>>1;
+			if(check(mid))r=mid;
+			else l=mid;
+		}
+        cout<<r<<endl;
 
     // printf("%.9f\n",ans);
     }
