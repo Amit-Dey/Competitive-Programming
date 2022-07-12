@@ -78,10 +78,20 @@ ll t,n,m,ans,mx,mn,cnt,sum,a,b,c,x,y,u,v;
 // solution comes here
 ll solution(){
     t=1;
-    // cin>>t;
+    cin>>t;
     while (t--){
-       
-        
+        cin>>n;
+        vector<ll>arr(n),ar;
+        FOR(i,0,n){
+            cin>>arr[i];
+            if(arr[i]<i+1)ar.push_back(i+1);
+        }   
+        ans=0;
+        each(i,ar){
+            ans+=lb(all(ar),arr[i-1])-bg(ar);
+        }
+
+        cout<<ans<<endl;
         
     // printf("%.9f\n",ans);
     }

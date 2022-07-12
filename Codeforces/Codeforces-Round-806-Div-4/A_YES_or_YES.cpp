@@ -1,6 +1,6 @@
 /**
  *    author:  Amit Dey
- *    problem link: https://codeforces.com/contest/1703/problem/0
+ *    problem link: https://codeforces.com/contest/1703/problem/A
  * 
 **/
 #include <bits/stdc++.h>

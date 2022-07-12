@@ -86,27 +86,42 @@ ll solution(){
             cin>>arr[i];
             arr[i]="#"+arr[i];
         }
-        ans=0,cnt=0;
+        ans=0;
+        vector<ll>x(4),y(4);
+        x[0]=0,y[0]=0;
+        x[1]=0,y[1]=n+1;
+        x[2]=n+1,y[2]=n+1;
+        x[3]=n+1,y[3]=0;
+
          for (ll i = 1; i <= n; i++){
             for (ll j = 1; j <= n; j++){
-                if(arr[i][j]=='1'){
-                    if(arr[j][i]=='0'){
-                        ans++;
-                        arr[j][i]='1';
-                    }
-                    if(arr[n-j+1][n-i+1]=='0'){
-                        ans++;
-                        arr[n-j+1][n-i+1]='1';
-                    }
-                    if(arr[n-i+1][n-j+1]=='0'){
-                        ans++;
-                        arr[n-i+1][n-j+1]='1';
-                    }
-                }
-                
+                ll flag =0;
+                ll disx=i-x[0];
+                ll disy=j-y[0];
+
+                ll p1x=x[1]+disy;
+                ll p1y=y[1]-disx;
+
+                ll p2x=x[2]-disx;
+                ll p2y=y[2]-disy;
+
+                ll p3x=x[3]-disy;
+                ll p3y=y[3]+disx;
+                ll cnt0=0,cnt1=0;
+
+                if(arr[i][j]=='0')cnt0++;
+                else cnt1++;
+                if(arr[p1x][p1y]=='0')cnt0++;
+                else cnt1++;
+                if(arr[p2x][p2y]=='0')cnt0++;
+                else cnt1++;
+                if(arr[p3x][p3y]=='0')cnt0++;
+                else cnt1++;
+
+                ans+=min(cnt0,cnt1);
             }
         }
-        cout<<ans<<endl;
+        cout<<ans/4<<endl;
         
     // printf("%.9f\n",ans);
     }
