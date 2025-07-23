@@ -1,0 +1,203 @@
+.file-viewer {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+  max-height: 80vh;
+  position: relative;
+}
+
+.file-viewer.maximized {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  max-height: none;
+  z-index: 1000;
+  border-radius: 10px;
+}
+
+.file-viewer.minimized {
+  max-height: 50vh;
+}
+
+.viewer-header {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+}
+
+.file-info .file-icon {
+  color: #4fc3f7;
+}
+
+.file-name {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.file-language {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.viewer-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.control-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 6px;
+  padding: 8px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.control-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.copy-btn:hover {
+  background: rgba(76, 175, 80, 0.3);
+}
+
+.close-btn:hover {
+  background: rgba(244, 67, 54, 0.3);
+}
+
+.copy-notification {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: rgba(76, 175, 80, 0.9);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  z-index: 1000;
+}
+
+.viewer-content {
+  max-height: calc(80vh - 80px);
+  overflow: auto;
+}
+
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 0 0 15px 15px;
+}
+
+.loading-content div {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #4fc3f7;
+}
+
+.loading-content p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.file-viewer.maximized .viewer-content {
+  max-height: calc(100vh - 100px);
+}
+
+.file-viewer.minimized .viewer-content {
+  max-height: calc(50vh - 80px);
+}
+
+/* Custom scrollbar for viewer content */
+.viewer-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.viewer-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.viewer-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.viewer-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Syntax highlighter customizations */
+.viewer-content pre {
+  margin: 0 !important;
+}
+
+.viewer-content code {
+  font-family: 'Fira Code', 'Monaco', 'Consolas', monospace !important;
+}
+
+@media (max-width: 768px) {
+  .file-viewer {
+    max-height: 60vh;
+  }
+  
+  .file-viewer.maximized {
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+  }
+  
+  .viewer-header {
+    padding: 12px 15px;
+  }
+  
+  .file-name {
+    font-size: 0.9rem;
+  }
+  
+  .file-language {
+    font-size: 0.7rem;
+  }
+  
+  .control-btn {
+    padding: 6px;
+    font-size: 0.9rem;
+  }
+  
+  .viewer-content {
+    max-height: calc(60vh - 70px);
+  }
+  
+  .file-viewer.maximized .viewer-content {
+    max-height: calc(100vh - 80px);
+  }
+}

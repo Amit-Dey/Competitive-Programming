@@ -1,0 +1,69 @@
+.App {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: white;
+  text-align: center;
+}
+
+.loading-spinner {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.loading-screen p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.main-container {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  gap: 20px;
+  min-height: calc(100vh - 100px);
+}
+
+.main-container.maximized {
+  max-width: 100%;
+  padding: 10px;
+}
+
+.main-container.minimized {
+  max-width: 800px;
+}
+
+.explorer-section {
+  flex: 1;
+  min-width: 350px;
+  max-width: 450px;
+}
+
+.viewer-section {
+  flex: 2;
+  min-width: 600px;
+}
+
+@media (max-width: 1024px) {
+  .main-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+  
+  .explorer-section {
+    max-width: 100%;
+    min-width: 100%;
+  }
+  
+  .viewer-section {
+    min-width: 100%;
+  }
+}
