@@ -12,3 +12,4 @@ while i<t:
   arr = list(map(int,input().split()))
   print(arr)
   i+=1
+
